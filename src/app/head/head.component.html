@@ -1,0 +1,223 @@
+
+
+
+
+
+
+
+<header class="">
+    <div class="open-menu-con">
+        <ul>
+            <li (click)='selectMovies($event)' id="now_playing" class="li1">Now playing</li>
+            <li (click)='selectMovies($event)' id="popular" class="li2">Popular</li>
+            <li (click)='selectMovies($event)' id="top_rated" class="li3">Top Rated</li>
+            <li (click)='trend()' id="trending" class="li4">Trending</li>
+            <li (click)='selectMovies($event)' id="upcoming" class="li5">Upcoming</li>
+            <li id="contactUs" (click)="contact()" class="li6">Contact Us</li>
+
+        </ul>
+        
+        <div class="set">
+            <div class="social-items">
+                   
+                        
+                <div class="social-icons">
+               
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fas fa-globe"></i>
+               
+                </div>
+           
+        
+            <div class="social-info">
+        
+                <span>Copyright Â© 2019 All Rights Reserved.</span>
+        
+            </div>
+    </div>
+        </div>
+      
+    </div>
+    <div class="menu-con">
+        <img src="../../assets/logo.png" alt="">
+        <div class="toggle-icon">
+            <i (click)='open()'  class="fas fa-align-justify open"></i>
+
+            <i  (click)='close()' class="fas fa-times close"></i>
+        </div>
+        <div class="global-icon">
+
+            <div class="">
+                <i class="fas fa-globe d-block"></i>
+                <i class="fas fa-share-alt d-block"></i>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="container head-con">
+        <div class="row inputs-con">
+
+            <div class="col-md-5 col-sm-10 item-inpt">
+
+                <input (keyup)="onSearch($event)" id="getByWord" type="text" placeholder="get movies by word">
+            </div>
+
+
+            <!-- <div class="col-md-5 col-sm-10 item-inpt">
+                <input id="search"  class="" type="text" placeholder="search....">
+            </div> -->
+        </div>
+    </div>
+
+
+</header>
+
+<!----------------->
+
+<section class="w-100 container">
+
+    <div id="movies-con" class="row ">
+                
+<div *ngFor='let i of  movieArray' class="col-md-6 col-lg-4 my-3 shadow">
+
+    <div class="shadow movie-item rounded">
+       <div class="text-center img-movie">
+            <img class="img-fluid" [src]="imagePath+i.poster_path" alt="">
+       </div>
+    
+       <div class="img-layer h-100 text-center py-5 d-flex justify-content-center">
+       
+       <div class="text-center p-2">
+       
+       <h4 class="d-block">{{i.original_title}}</h4>
+       <p class="d-block py-3">{{i.overview}}</p>
+       <h6 class="py-3">rate : {{i.vote_average}}</h6>
+       <h6 class=""> {{i.release_date}}</h6>
+
+       </div>
+       </div>
+    </div>
+    
+    </div>
+    
+    
+    
+    
+    </div>
+            
+    
+        </section>
+
+<!----------------->
+
+
+<nav class="d-flex justify-content-center" aria-label="Page navigation example">
+    <ul class="w-50 pagination justify-content-center flex-wrap">
+     
+   <!-- *ngFor="let slide of slides" -->
+      <!-- <li class="page-item">
+        <a class="page-link" href="#" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+      </li> -->
+      <ngx-slick-carousel class="carousel pagination-con" 
+      #slickModal="slick-carousel" 
+      [config]="slideConfig" 
+      >
+      <li  ngxSlickItem  class="slide" *ngFor='let i of arrNumOfPages ;index as x' class="page-item">
+          <a active='bg-danger' class="page-link" (click)='clickedLi($event)' href="#" >{{i}}{{x+1}}</a></li>
+          <!--  -->
+ 
+ </ngx-slick-carousel>
+      
+      <!-- <li class="page-item">
+        <a class="page-link" href="#" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li> -->
+    </ul>
+  </nav>
+ 
+<!------------------------>
+<!-- [style.display]='nameValid?d-block:d-none' -->
+        <section class="my-4 contact-con">
+            <div class="container ">
+                <h2 id="contact-h">Contact Us...</h2>
+                <div class="row inputs-con">
+    
+                    <div class="col-md-5 col-sm-10 contact-input">
+    
+                        <input  (keyup)="onKeyName($event)" id="nameInp" type="text" placeholder="Enter Your Name">
+                        <div id="nameAlert"  class="alert-danger contact-alert" >
+                            <p>your name is not valid</p>
+                        </div>
+    
+                    </div>
+                   
+    
+    
+                    <div class="col-md-5 col-sm-10 contact-input">
+                        <input  (keyup)="onKeyEmail($event)" id="emailInp" type="text" placeholder="Enter Your Email">
+    
+                        <div id="emailAlert" class="alert-danger contact-alert ">
+                            <p>Enter valid email</p>
+                        </div>
+                    </div>
+                   
+    
+                    <div class="col-md-5 col-sm-10 contact-input">
+    
+                        <input (keyup)="onKeyPhone($event)" id="phoneInp" type="text" placeholder="Enter Your Phone">
+                        <div id="phoneAlert" class="alert-danger contact-alert">
+                            <p>your phone is not valid</p>
+                        </div>
+                    </div>
+    
+    
+                    <div class="col-md-5 col-sm-10 contact-input">
+                        <input (keyup)="onKeyAge($event)" id="ageInp" type="text" placeholder="Enter Age">
+                        <div id="ageAlert" class="alert-danger contact-alert">
+                            <p>your age is not valid (must be from 10 :80 years)</p>
+                        </div>
+                    </div>
+    
+                    <div class="col-md-5 col-sm-10 contact-input">
+    
+                        <input (keyup)="onKeyPass($event)" id="passInp"type="password" placeholder="Enter Password">
+                        <div id="passAlert" class="alert-danger contact-alert">
+                            <p>password must contain at least 8 characters & one letter & one digit</p>
+                        </div>
+    
+                       
+                    </div>
+    
+    
+                    <div class="col-md-5 col-sm-10 contact-input">
+                        <input (keyup)="onKeyRePass($event)" id="rePassInp" type="password" placeholder="Enter RePassword">
+
+                        
+    
+                        <div id="rePassAlert" class="alert-danger contact-alert">
+                            <p>Re Password not match with Password</p>
+                        </div>
+                    </div>
+    
+                </div> 
+                <button id="btnn" [disabled]="valid"class="btn btn-danger">Submit</button>
+            </div>
+            <!-- <div class="bg-danger" data-slick='{"slidesToShow": 4, "slidesToScroll": 4}'>
+                <div class="bg-info px-5"><h3>1 dskfgk;jba;vkjlkjbjlkb</h3></div>
+                <div><h3>2</h3></div>
+                <div><h3>3</h3></div>
+                <div><h3>4</h3></div>
+                <div><h3>5</h3></div>
+                <div><h3>6</h3></div>
+              </div>
+     -->
+
+     
+        </section>
+    

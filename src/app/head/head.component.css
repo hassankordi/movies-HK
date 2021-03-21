@@ -1,0 +1,271 @@
+
+.pagination-con{
+    width: 50%;
+    height: 30px;
+}
+.item-inpt input{
+    border: none;
+    background-color: #0d0d0d;
+    border-bottom: #b7b7b7 solid 1px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    margin: 45px 0;
+}
+
+.inputs-con{
+    justify-content: space-evenly;
+    margin: 50px;
+}
+.head-con{
+    position: relative;
+  
+    z-index: 2;
+}
+/*****************menu**********************/
+
+.social-items{
+ 
+    padding-top: 30px;
+
+    position: absolute;
+    
+
+   
+    z-index: 5555;
+    bottom: 10px;
+    
+}
+.social-icons{
+  
+    padding-left: 30px; 
+}
+.social-icons i{
+  
+    padding-left: 15px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.8s ease;
+    
+}
+.social-info{
+   color: white;
+   padding-left: 25px;
+}
+
+.set{
+width: 100%;
+height: 50%;
+
+position: relative;
+top: 0;
+left: 0;
+bottom: 10px;
+z-index: 55;
+padding-bottom: 10px;
+}
+/**************************/
+.open-menu-con{
+    width: 250px;
+    height: 100vh;
+   transform: translateX(-250px);
+    position: fixed;
+    background-color: #0d0d0d;
+   
+transition: all 0.6s ease;
+    top: 0;
+    left: 0;
+    z-index: 55555;
+}
+.open-menu-con ul{
+    list-style: none;
+  color: white;
+    padding-left: 30px;
+    height: 45%;
+    overflow: hidden;
+    margin-bottom: 1rem;
+   
+}
+.open-menu-con ul li{
+    padding-top: 20px;
+    font-size: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: all 0.6 ease;
+    cursor: pointer;
+}
+.open-menu-con ul li:hover{
+    color: #dc3545;
+}
+
+/*************************************/
+.menu-con{
+    background-color: #f8f8f8;
+    height: 100vh;
+    width: 60px;
+    padding: 25px 0;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    transition: all 0.6s ease;
+    transform: translateX(0);
+}
+.menu-con img{
+    width: 30px;
+    height: 48px;
+    cursor: pointer;
+}
+.toggle-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    height: 70%;
+    font-size: 25px;
+    font-weight: 900;
+   
+}
+.toggle-icon i{
+    cursor: pointer;
+    transform: translateY(50px);
+}
+.close{
+    display: none;
+}
+.global-icon{
+    display: flex;
+    height: 25%;
+    padding: 20px 0;
+    flex-direction: column-reverse;
+
+}
+.global-icon i {
+    padding: 10px 0;
+    cursor: pointer;
+    transition: all 0.8s ease;
+    
+}
+.open-menu-con ul li{
+    transform: translateY(400px);
+    transition: all 2s ease;
+
+}
+.global-icon i:hover {
+  
+    color: #dc3545;
+}
+.social-icons i:hover{
+    color: #dc3545;
+}
+
+
+
+
+
+/**************************************/
+
+
+#nameAlert, #emailAlert ,#phoneAlert,#ageAlert,#rePassAlert,#passAlert{
+    display: none;
+}
+
+
+
+
+.contact-input input{
+    border: none;
+    background-color: #0d0d0d;
+    border-bottom: #b7b7b7 solid 1px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    padding: 15px;
+    margin: 10px;
+    width: 100%;
+    /* margin: 25px 0; */
+}
+
+.contact-con h2{
+    margin-top: 30px;
+    color: white;
+}
+.contact-alert{
+    padding: 15px;
+    margin: 10px;
+    border-radius: 8px;
+}
+
+
+
+/************************************/
+
+.img-movie img{
+   
+    border-radius: 8px;
+}
+h1{
+    text-align: center;
+    color: tomato;
+}
+.movie-item{
+    position: relative;
+    overflow: hidden;
+
+}
+.movie-item:hover .img-layer{
+    top: 0;
+}
+.img-layer{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(255,255,255,.7);
+    top: 100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: all 1s;
+    border-radius: 8px;
+}
+
+
+
+@media all and (max-width: 768px) { 
+
+    .open-menu-con ul li{
+        font-size: 15px !important;
+        padding-top: 15px;
+      
+    }
+    .movie-item{
+        width: 300px;
+      
+        margin: auto;
+    }
+    #btnn{
+        margin: auto;
+        transform: translateX(200px);
+    }
+ }
+
+
+
+ 
+@media all and (max-width:576px){
+   
+    .open-menu-con ul li{
+        font-size: 12px !important;
+        padding-top: 10px;
+     
+    }
+    .movie-item{
+        width: 200px;
+       margin: auto;
+    }
+    #btnn{
+        margin: auto;
+        transform: translateX(200px);
+    }
+  
+}
